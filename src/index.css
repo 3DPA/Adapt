@@ -1,0 +1,47 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+  --font-comic: "Bangers", cursive;
+  
+  --color-bg: #2d2d2d;
+  --color-card-bg: #ffffff;
+  --color-border: #000000;
+  --color-accent: #dc2626;
+  --color-success: #16a34a;
+  --color-text-main: #ffffff;
+  --color-text-muted: #a3a3a3;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Bangers&family=Inter:wght@400;700;900&display=swap');
+
+body {
+  background-color: var(--color-bg);
+  color: var(--color-text-main);
+  font-family: var(--font-sans);
+  background-image: radial-gradient(#444 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+.comic-panel {
+  @apply bg-white border-4 border-black rounded-none shadow-[8px_8px_0px_rgba(220,38,38,1)] transition-all;
+}
+
+.comic-title {
+  @apply font-comic text-5xl tracking-wider uppercase text-white;
+  text-shadow: 2px 2px 0px #dc2626, 4px 4px 0px #000;
+}
+
+.voice-pulse {
+  animation: pulse 1.5s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: .7; transform: scale(1.1); }
+}
+
+.header-title {
+  border-bottom: 2px solid var(--color-border);
+}
